@@ -16,7 +16,7 @@ import com.sinensia.medicdata.backend.integration.model.ReportePL;
 import com.sinensia.medicdata.backend.integration.repository.ReportePLRepository;
 
 @Service
-public class ReporteServiceImmpl implements ReporteServices {
+public class ReporteServiceImpl implements ReporteServices {
 
 	@Autowired
 	private DozerBeanMapper dozerBeanMapper;

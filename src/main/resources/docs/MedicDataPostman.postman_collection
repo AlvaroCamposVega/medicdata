@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "1b09db48-0bcd-459b-bd83-632257a8302c",
+		"name": "medicdata",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Rest-Reportes-getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://10.250.5.11:8080/rest/reportes",
+					"protocol": "http",
+					"host": [
+						"10",
+						"250",
+						"5",
+						"11"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"reportes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rest-Reportes-read",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://10.250.5.11:8080/rest/reportes/5",
+					"protocol": "http",
+					"host": [
+						"10",
+						"250",
+						"5",
+						"11"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"reportes",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rest-Reportes-create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.250.5.11:8080/rest/reportes",
+					"protocol": "http",
+					"host": [
+						"10",
+						"250",
+						"5",
+						"11"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"reportes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rest-Usuarios-getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://10.250.5.11:8080/rest/usuarios",
+					"protocol": "http",
+					"host": [
+						"10",
+						"250",
+						"5",
+						"11"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rest-Usuarios-read",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://10.250.5.11:8080/rest/usuarios/271949805-X",
+					"protocol": "http",
+					"host": [
+						"10",
+						"250",
+						"5",
+						"11"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"usuarios",
+						"271949805-X"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rest-Usuarios-create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://10.250.5.11:8080/rest/usuarios",
+					"protocol": "http",
+					"host": [
+						"10",
+						"250",
+						"5",
+						"11"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

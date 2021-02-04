@@ -6,10 +6,15 @@
    
     <!-- Integration TO Business -->
  	  
-  	<!-- <mapping> 
-    	<class-a>com.sinensia.productosboot.backend.integration.model.ProductoPL</class-a>
-    	<class-b>com.sinensia.productosboot.backend.business.model.Producto</class-b>
-  	</mapping> -->
+  	<mapping> 
+    	<class-a>com.sinensia.medicdata.backend.integration.model.UsuarioPL</class-a>
+    	<class-b>com.sinensia.medicdata.backend.business.model.Usuario</class-b>
+  	</mapping>
+  	
+  	<mapping> 
+    	<class-a>com.sinensia.medicdata.backend.integration.model.ReportePL</class-a>
+    	<class-b>com.sinensia.medicdata.backend.business.model.Reporte</class-b>
+  	</mapping>
   	
   		  	  	
 </mappings>
