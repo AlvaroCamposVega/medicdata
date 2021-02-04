@@ -4,13 +4,13 @@ import java.util.Date;
 
 public class Usuario {
 	
-	String dni;
-	String apellido1;
-	String apellido2;
-	Sexo   sexo;
-	Date   fechaNacimiento;
-	Double altura;
-	String observaciones;
+	private String dni;
+	private String apellido1;
+	private String apellido2;
+	private Sexo   sexo;
+	private Date   fechaNacimiento;
+	private Double altura;
+	private String observaciones;
 	
 	public Usuario() {
 	

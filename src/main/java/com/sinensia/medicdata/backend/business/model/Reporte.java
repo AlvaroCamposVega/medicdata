@@ -4,12 +4,12 @@ import java.util.Date;
 
 public class Reporte {
 
-	int             id;
-	Date            fechaReporte;
-	Geolocalizacion geolocalizacion;
-	double          peso;
-	PresionArterial presionArterial;
-	int             pasos;
+	private int             id;
+	private Date            fechaReporte;
+	private Geolocalizacion geolocalizacion;
+	private double          peso;
+	private PresionArterial presionArterial;
+	private int             pasos;
 	
 	public Reporte() {
 		

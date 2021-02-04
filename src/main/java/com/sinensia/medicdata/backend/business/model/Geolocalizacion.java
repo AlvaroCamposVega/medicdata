@@ -2,8 +2,8 @@ package com.sinensia.medicdata.backend.business.model;
 
 public class Geolocalizacion {
 
-	double latitud;
-	double longitud;
+	private double latitud;
+	private double longitud;
 	
 	public double getLatitud() {
 		return latitud;

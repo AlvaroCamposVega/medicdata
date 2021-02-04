@@ -2,8 +2,8 @@ package com.sinensia.medicdata.backend.business.model;
 
 public class PresionArterial {
 
-	int presion_minima;
-	int presion_maxima;
+	private int presion_minima;
+	private int presion_maxima;
 	
 	public PresionArterial() {
 	
