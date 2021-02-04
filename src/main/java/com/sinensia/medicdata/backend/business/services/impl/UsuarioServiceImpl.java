@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import com.sinensia.medicdata.backend.business.model.Usuario;
 import com.sinensia.medicdata.backend.business.services.UsuarioServices;
 import com.sinensia.medicdata.backend.integration.model.UsuarioPL;
-import com.sinensia.medicdata.backend.integration.repository.UsuarioPLRepository;
+import com.sinensia.medicdata.backend.integration.repositories.UsuarioPLRepository;
 
 
 @Service

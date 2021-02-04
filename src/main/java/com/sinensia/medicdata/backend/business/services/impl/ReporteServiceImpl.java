@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import com.sinensia.medicdata.backend.business.model.Reporte;
 import com.sinensia.medicdata.backend.business.services.ReporteServices;
 import com.sinensia.medicdata.backend.integration.model.ReportePL;
-import com.sinensia.medicdata.backend.integration.repository.ReportePLRepository;
+import com.sinensia.medicdata.backend.integration.repositories.ReportePLRepository;
 
 @Service
 public class ReporteServiceImpl implements ReporteServices {
