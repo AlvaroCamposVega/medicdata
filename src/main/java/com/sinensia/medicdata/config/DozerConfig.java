@@ -1,4 +1,4 @@
-package com.sinensia.medicdata.medicdata.config;
+package com.sinensia.medicdata.config;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.sinensia.medicdata.medicdata.config;
+package com.sinensia.medicdata.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
