@@ -6,7 +6,6 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
-import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +13,16 @@ import com.sinensia.medicdata.backend.business.model.Reporte;
 import com.sinensia.medicdata.backend.business.services.ReporteServices;
 import com.sinensia.medicdata.backend.integration.model.ReportePL;
 import com.sinensia.medicdata.backend.integration.repositories.ReportePLRepository;
+import com.sinensia.medicdata.helpers.Sala4Mapper;
 
 @Service
 public class ReporteServiceImpl implements ReporteServices {
 
 	@Autowired
-	private DozerBeanMapper dozerBeanMapper;
+	private Sala4Mapper sala4Mapper;
+	
+	// @Autowired
+	// private DozerBeanMapper dozerBeanMapper;
 	 
 	@Autowired
 	private ReportePLRepository reportePLRepository;
@@ -31,7 +34,9 @@ public class ReporteServiceImpl implements ReporteServices {
 		
 		ReportePL reportePL = optionalReportePL.isPresent() ? optionalReportePL.get() : null;
 		
-		Reporte reporte =  dozerBeanMapper.map(reportePL, Reporte.class);
+		// Reporte reporte =  dozerBeanMapper.map(reportePL, Reporte.class);
+		
+		Reporte reporte = sala4Mapper.convertReportePLToReporte(reportePL);
 		
 		return reporte;
 	}
@@ -44,7 +49,9 @@ public class ReporteServiceImpl implements ReporteServices {
 		List<Reporte> reportes = new ArrayList<>();
 		
 		for (ReportePL reportePL : reportesPL) {
-			reportes.add(dozerBeanMapper.map(reportePL, Reporte.class));
+			// reportes.add(dozerBeanMapper.map(reportePL, Reporte.class));
+			
+			reportes.add(sala4Mapper.convertReportePLToReporte(reportePL));
 		}
 
 		return reportes;
@@ -54,11 +61,15 @@ public class ReporteServiceImpl implements ReporteServices {
 	@Transactional
 	public Reporte save(Reporte reporte) {
 		
-		ReportePL reportePL = dozerBeanMapper.map(reporte, ReportePL.class);
+		// ReportePL reportePL = dozerBeanMapper.map(reporte, ReportePL.class);
+		
+		ReportePL reportePL = sala4Mapper.convertReporteToReportePL(reporte);
 
 		ReportePL createdReportePL = reportePLRepository.save(reportePL);
 
-		Reporte createdReporte = dozerBeanMapper.map(createdReportePL, Reporte.class);
+		// Reporte createdReporte = dozerBeanMapper.map(createdReportePL, Reporte.class);
+		
+		Reporte createdReporte = sala4Mapper.convertReportePLToReporte(createdReportePL);
 
 		return createdReporte;
 	}

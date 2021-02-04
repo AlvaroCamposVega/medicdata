@@ -13,7 +13,7 @@ public class PresionArterial {
 		return presionMinima;
 	}
 
-	public void setPresion_minima(int presionMinima) {
+	public void setPresionMinima(int presionMinima) {
 		this.presionMinima = presionMinima;
 	}
 

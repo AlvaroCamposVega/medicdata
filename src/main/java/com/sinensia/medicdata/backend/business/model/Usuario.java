@@ -5,6 +5,7 @@ import java.util.Date;
 public class Usuario {
 	
 	private String dni;
+	private String nombre;
 	private String apellido1;
 	private String apellido2;
 	private Sexo   sexo;
@@ -16,13 +17,20 @@ public class Usuario {
 	
 	}
 
-
 	public String getDni() {
 		return dni;
 	}
 
 	public void setDni(String dni) {
 		this.dni = dni;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public String getApellido1() {

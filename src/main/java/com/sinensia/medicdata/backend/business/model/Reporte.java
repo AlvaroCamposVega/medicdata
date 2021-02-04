@@ -2,12 +2,10 @@ package com.sinensia.medicdata.backend.business.model;
 
 import java.util.Date;
 
-import com.sinensia.medicdata.backend.integration.model.UsuarioPL;
-
 public class Reporte {
 
 	private int             id;
-	private UsuarioPL       usuario;
+	private Usuario         usuario;
 	private Date            fechaReporte;
 	private Geolocalizacion geolocalizacion;
 	private double          peso;
@@ -26,11 +24,11 @@ public class Reporte {
 		this.id = id;
 	}
 
-	public UsuarioPL getUsuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(UsuarioPL usuario) {
+	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
 
