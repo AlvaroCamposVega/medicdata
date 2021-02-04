@@ -17,7 +17,7 @@ public class SwaggerConfig {
 		
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.sinensia.medicdata.presentation.controllers"))
+				.apis(RequestHandlerSelectors.basePackage("com.sinensia.medicdata.backend.presentation.restcontrollers"))
 				.build();
 	}
 	
