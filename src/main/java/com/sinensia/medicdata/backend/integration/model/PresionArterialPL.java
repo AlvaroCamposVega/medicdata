@@ -1,4 +1,4 @@
-package com.medicdata.integration.model;
+package com.sinensia.medicdata.backend.integration.model;
 
 import javax.persistence.Embeddable;
 

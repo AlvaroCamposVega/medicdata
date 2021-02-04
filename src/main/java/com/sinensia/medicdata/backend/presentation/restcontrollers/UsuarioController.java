@@ -1,4 +1,4 @@
-package com.sinensia.medicdata.presentation.restcontrollers;
+package com.sinensia.medicdata.backend.presentation.restcontrollers;
 
 import java.util.List;
 
@@ -11,30 +11,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sinensia.medicdata.backend.business.model.Reporte;
-import com.sinensia.medicdata.backend.business.services.ReporteServices;
+import com.sinensia.medicdata.backend.business.model.Usuario;
+import com.sinensia.medicdata.backend.business.services.UsuarioServices;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/rest/reportes")
-public class ReporteController {
+@RequestMapping("/rest/usuarios")
+public class UsuarioController {
 	
 	@Autowired
-	private ReporteServices reporteServices;
+	private UsuarioServices usuarioServices;
 	
 	@GetMapping
-	public List<Reporte>getAll(){
-		return reporteServices.getAll();
+	public List<Usuario>getAll(){
+		return usuarioServices.getAll();
 	}
 	
-	@GetMapping("/{id}")
-	public Reporte getByCodigo(@PathVariable("id") Integer id) {
-		return reporteServices.read(id);
+	@GetMapping("/{dni}")
+	public Usuario getByCodigo(@PathVariable("dni") String dni) {
+		return usuarioServices.read(dni);
 	}
 	
 	@PostMapping
-	public Reporte create(@RequestBody Reporte reporte) {
-		return reporteServices.save(reporte);
+	public Usuario create(@RequestBody Usuario usuario) {
+		return usuarioServices.save(usuario);
 	}
 
 }
