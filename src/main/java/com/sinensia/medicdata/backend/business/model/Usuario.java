@@ -9,7 +9,7 @@ public class Usuario {
 	private String apellido2;
 	private Sexo   sexo;
 	private Date   fechaNacimiento;
-	private Double altura;
+	private double altura;
 	private String observaciones;
 	
 	public Usuario() {
@@ -57,11 +57,11 @@ public class Usuario {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public Double getAltura() {
+	public double getAltura() {
 		return altura;
 	}
 
-	public void setAltura(Double altura) {
+	public void setAltura(double altura) {
 		this.altura = altura;
 	}
 

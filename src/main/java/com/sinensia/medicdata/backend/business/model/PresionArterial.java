@@ -2,32 +2,32 @@ package com.sinensia.medicdata.backend.business.model;
 
 public class PresionArterial {
 
-	private int presion_minima;
-	private int presion_maxima;
+	private int presionMinima;
+	private int presionMaxima;
 	
 	public PresionArterial() {
 	
 	}
 
-	public int getPresion_minima() {
-		return presion_minima;
+	public int getPresionMinima() {
+		return presionMinima;
 	}
 
-	public void setPresion_minima(int presion_minima) {
-		this.presion_minima = presion_minima;
+	public void setPresion_minima(int presionMinima) {
+		this.presionMinima = presionMinima;
 	}
 
-	public int getPresion_maxima() {
-		return presion_maxima;
+	public int getPresionMaxima() {
+		return presionMaxima;
 	}
 
-	public void setPresion_maxima(int presion_maxima) {
-		this.presion_maxima = presion_maxima;
+	public void setPresionMaxima(int presionMaxima) {
+		this.presionMaxima = presionMaxima;
 	}
 
 	@Override
 	public String toString() {
-		return "PresionArterial [presion_minima=" + presion_minima + ", presion_maxima=" + presion_maxima + "]";
+		return "PresionArterial [presion_minima=" + presionMinima + ", presion_maxima=" + presionMaxima + "]";
 	}
 	
 	

@@ -5,6 +5,10 @@ public class Geolocalizacion {
 	private double latitud;
 	private double longitud;
 	
+	public Geolocalizacion() {
+		
+	}
+	
 	public double getLatitud() {
 		return latitud;
 	}

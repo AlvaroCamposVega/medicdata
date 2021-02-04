@@ -16,5 +16,15 @@
     	<class-b>com.sinensia.medicdata.backend.business.model.Reporte</class-b>
   	</mapping>
   	
+  	<mapping> 
+    	<class-a>com.sinensia.medicdata.backend.integration.model.GeolocalizacionPL</class-a>
+    	<class-b>com.sinensia.medicdata.backend.business.model.Geolocalizacion</class-b>
+  	</mapping>
+  	
+  	<mapping> 
+    	<class-a>com.sinensia.medicdata.backend.integration.model.PresionArterialPL</class-a>
+    	<class-b>com.sinensia.medicdata.backend.business.model.PresionArterial</class-b>
+  	</mapping>
+  	
   		  	  	
 </mappings>
