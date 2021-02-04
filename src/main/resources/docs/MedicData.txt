@@ -1,0 +1,42 @@
+Usuario
+
+- DNI (business key) : String
+- nombre : String
+- apellido1 : String
+- apellido2 : String
+- sexo (HOMBRE, MUJER) : ENUM
+- fechaNacimiento : Date
+- altura : double
+- observaciones : String
+
+
+Reporte
+
+- fechaReporte : Date
+- geolocalizacion : Geolocalizacion
+- peso : double
+- presionArterial : PresionArterial
+- pasos : int
+
+Geolocalizacion
+
+- latitud : double
+- longitud : double
+
+PresionArterial
+
+- minima : int
+- maxima : int
+
+
+TODOS
+
+1.- Definir el modelo (integracion/business)
+2.- Definir e implementar interfaces de la capa de business: 
+
+ - crear
+ - obtener listados (getAll)
+ - obtener a partir del código
+
+3.- Crear la API REST
+4.- Crear la aplicación WEB con JSP
