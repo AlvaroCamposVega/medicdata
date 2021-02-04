@@ -18,7 +18,7 @@ public class UsuarioPL {
 	private String apellido1;
 	private String apellido2;
 	
-	@Column(columnDefinition = "ENUM")
+	@Column(columnDefinition="ENUM")
 	private SexoPL sexo;
 	
 	@Column(name="FECHA_NACIMIENTO")
