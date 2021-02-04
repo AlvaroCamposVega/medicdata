@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sinensia.medicdata.business.model.Services;
-import com.sinensia.medicdata.business.services.UsuarioServices;
+import com.sinensia.medicdata.backend.business.model.Usuario;
+import com.sinensia.medicdata.backend.business.services.UsuarioServices;
 
 @RestController
 @CrossOrigin
