@@ -1,4 +1,4 @@
-package com.sinensia.medicdata.medicdata;
+package com.sinensia.medicdata;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
