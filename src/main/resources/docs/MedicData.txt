@@ -25,8 +25,8 @@ Geolocalizacion
 
 PresionArterial
 
-- minima : int
-- maxima : int
+- presionMinima : int
+- presionMaxima : int
 
 
 TODOS
@@ -36,7 +36,7 @@ TODOS
 
  - crear
  - obtener listados (getAll)
- - obtener a partir del código
+ - obtener a partir del cï¿½digo
 
 3.- Crear la API REST
-4.- Crear la aplicación WEB con JSP
+4.- Crear la aplicaciï¿½n WEB con JSP
