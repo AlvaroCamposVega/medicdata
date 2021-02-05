@@ -6,11 +6,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Listado de Usuarios</title>
-		<script type="text/javascript">
-			function goToDetalleUsuario(dni) {
-				window.location.replace("detalle-usuario/" + dni);
-			}
-		</script>
+		<link rel="stylesheet" href="/css/style.css">
+		<script type="text/javascript" src="/js/utils.js"></script>
 	</head>
 	<body>
 		<%@ include file="../includes/navbar.jsp" %>
@@ -24,7 +21,7 @@
 				<th>Fecha de Nacimiento</th>
 			</tr>
 			<c:forEach var="usuario" items="${usuarios}">
-				<tr onclick="goToDetalleUsuario('${usuario.dni}')">
+				<tr class="linked-row" onclick="goToDetalleUsuario('${usuario.dni}')">
 					<td>${usuario.nombre}</td>
 					<td>${usuario.apellido1}</td>
 					<td>${usuario.apellido2}</td>
