@@ -12,6 +12,8 @@
 	<body>
 		<%@ include file="../includes/navbar.jsp" %>
 		
+		<h1>Listado de Usuarios</h1>
+		
 		<table>
 			<tr>
 				<th>Nombre</th>
