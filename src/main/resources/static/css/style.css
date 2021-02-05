@@ -1,0 +1,7 @@
+.linked-row {
+	cursor: pointer;
+}
+
+.linked-row:hover {
+	background-color: #eee;
+}
