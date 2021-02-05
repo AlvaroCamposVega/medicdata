@@ -22,7 +22,7 @@
 		</tr>
 		<tr>
 			<td>${reporte.id}</td>
-			<td><a href="detalle-usuario/${reporte.usuario.dni}">${reporte.usuario.dni}</a></td>
+			<td><a href="../detalle-usuario/${reporte.usuario.dni}">${reporte.usuario.dni}</a></td>
 			<td><fmt:formatDate pattern="dd/MM/yyyy" value="${reporte.fechaReporte}" /></td>
 			<td>Latitud: ${reporte.geolocalizacion.latitud}, Longitud: ${reporte.geolocalizacion.longitud}</td>
 			<td>${reporte.peso}</td>
