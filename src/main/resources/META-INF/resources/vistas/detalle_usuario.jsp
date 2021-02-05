@@ -40,5 +40,6 @@
 	</table>
 	<br><br>
 	<a href="../listado-usuarios"><button>VOLVER</button></a>
+	<a href="../nuevo-reporte/${usuario.dni}"><button>NUEVO REPORTE</button></a>
 </body>
 </html>
