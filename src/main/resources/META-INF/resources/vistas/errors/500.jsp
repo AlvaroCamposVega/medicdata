@@ -6,5 +6,6 @@
 </head>
 <body>
 	<h1>Error en el servidor</h1>
+	<a href="/"><button>INICIO</button></a>
 </body>
 </html>

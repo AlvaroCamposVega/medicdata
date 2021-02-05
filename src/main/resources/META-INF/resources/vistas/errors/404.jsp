@@ -6,5 +6,6 @@
 </head>
 <body>
 	<h1>Recurso no encontrado</h1>
+	<a href="/"><button>INICIO</button></a>
 </body>
 </html>
