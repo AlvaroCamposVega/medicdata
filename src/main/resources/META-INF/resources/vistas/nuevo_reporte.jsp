@@ -10,7 +10,7 @@
 		
 		<h1>Nuevo Reporte</h1>
 		
-		<form action="nuevo-reporte" method="POST">
+		<form action="../nuevo-reporte" method="POST">
 			<input type="text" name="dni" value="${dni}" contenteditable="false" hidden="true">
 			<label for="fechaReporte">Fecha</label>
 			<input type="date" name="fechaReporte" required="required">
@@ -25,5 +25,6 @@
 			<input type="number" name="latitud" hidden="true">
 			<input type="number" name="longitud" hidden="true">
 			<input type="number" name="pasos" hidden="true">
+			<input type="submit" value="Enviar">
 		</form>
 </html>
