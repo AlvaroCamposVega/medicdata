@@ -36,7 +36,10 @@ public class Sala4Mapper {
 		usuarioPL.setFechaNacimiento(reporte.getUsuario().getFechaNacimiento());
 		usuarioPL.setNombre(reporte.getUsuario().getNombre());
 		usuarioPL.setObservaciones(reporte.getUsuario().getObservaciones());
-		usuarioPL.setSexo(SexoPL.valueOf(reporte.getUsuario().getSexo().toString()));
+		
+		if (reporte.getUsuario().getSexo() != null) {
+			usuarioPL.setSexo(SexoPL.valueOf(reporte.getUsuario().getSexo().toString()));
+		}
 
 		reportePL.setId(reporte.getId());
 		reportePL.setFechaReporte(reporte.getFechaReporte());
@@ -69,7 +72,10 @@ public class Sala4Mapper {
 		usuario.setFechaNacimiento(reportePL.getUsuario().getFechaNacimiento());
 		usuario.setNombre(reportePL.getUsuario().getNombre());
 		usuario.setObservaciones(reportePL.getUsuario().getObservaciones());
-		usuario.setSexo(Sexo.valueOf(reportePL.getUsuario().getSexo().toString()));
+		
+		if (reportePL.getUsuario().getSexo() != null) {
+			usuario.setSexo(Sexo.valueOf(reportePL.getUsuario().getSexo().toString()));
+		}
 
 		reporte.setId(reportePL.getId());
 		reporte.setFechaReporte(reportePL.getFechaReporte());
@@ -93,7 +99,10 @@ public class Sala4Mapper {
 		usuarioPL.setFechaNacimiento(usuario.getFechaNacimiento());
 		usuarioPL.setNombre(usuario.getNombre());
 		usuarioPL.setObservaciones(usuario.getObservaciones());
-		usuarioPL.setSexo(SexoPL.valueOf(usuario.getSexo().toString()));
+		
+		if (usuario.getSexo() != null) {
+			usuarioPL.setSexo(SexoPL.valueOf(usuario.getSexo().toString()));
+		}
 
 		return usuarioPL;
 	}
@@ -109,7 +118,10 @@ public class Sala4Mapper {
 		usuario.setFechaNacimiento(usuarioPL.getFechaNacimiento());
 		usuario.setNombre(usuarioPL.getNombre());
 		usuario.setObservaciones(usuarioPL.getObservaciones());
-		usuario.setSexo(Sexo.valueOf(usuarioPL.getSexo().toString()));
+		
+		if (usuarioPL.getSexo() != null) {
+			usuario.setSexo(Sexo.valueOf(usuarioPL.getSexo().toString()));
+		}
 
 		return usuario;
 	}

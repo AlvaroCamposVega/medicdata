@@ -1,9 +1,12 @@
 package com.sinensia.medicdata.backend.presentation.controllers;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -60,7 +63,10 @@ public class AppUsuarioController {
 	}
 
 	@RequestMapping(value = "/nuevo-reporte", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-	public Reporte crearReporte(@RequestBody MultiValueMap<String, String> datosFormulario) {
+	public void crearReporte(
+			@RequestBody MultiValueMap<String, String> datosFormulario,
+			HttpServletResponse res
+	) throws ParseException {
 
 		Reporte reporteNuevo = new Reporte();
 
@@ -75,12 +81,7 @@ public class AppUsuarioController {
 
 		String fecha = datosFormulario.get("fechaReporte").get(0);
 		Date date = null;
-		try {
-			date = new SimpleDateFormat("yyyy/MM/dd").parse(fecha);
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		date = new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
 		reporteNuevo.setFechaReporte(date);
 
 		PresionArterial presionArterial = new PresionArterial();
@@ -92,8 +93,12 @@ public class AppUsuarioController {
 		reporteNuevo.setPeso(Double.parseDouble(datosFormulario.get("peso").get(0)));
 
 		reporteServices.save(reporteNuevo);
-
-		return reporteNuevo;
+		
+		try {
+			res.sendRedirect("/medicdata/listado-reportes");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
