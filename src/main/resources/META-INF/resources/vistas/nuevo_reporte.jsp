@@ -15,7 +15,7 @@
 			<input type="text" name="dni" value="${dni}" contenteditable="false" hidden="true">
 			<label for="peso">Peso</label>
 			<br>
-			<input type="number" name="peso" required="required">
+			<input type="text" name="peso" required="required">
 			<br>
 			<br>
 			<label>Presion Arterial</label>
@@ -28,10 +28,10 @@
 			<br>
 			<input type="number" name="presionMaxima" required="required">
 			<br>
-			<input type="date" name="fechaReporte" hidden="true">
-			<input type="number" name="latitud" hidden="true">
-			<input type="number" name="longitud" hidden="true">
-			<input type="number" name="pasos" hidden="true">
+			<input type="hidden" name="fechaReporte">
+			<input type="hidden" name="latitud">
+			<input type="hidden" name="longitud">
+			<input type="hidden" name="pasos">
 			<input type="submit" value="Enviar">
 		</form>
 </html>

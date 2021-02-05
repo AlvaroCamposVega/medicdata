@@ -88,7 +88,6 @@ public class AppUsuarioController {
 		presionArterial.setPresionMinima(Integer.parseInt(datosFormulario.get("presionMinima").get(0)));
 		reporteNuevo.setPresionArterial(presionArterial);
 
-		reporteNuevo.setId(Integer.parseInt(datosFormulario.get("id").get(0)));
 		reporteNuevo.setPasos(Integer.parseInt(datosFormulario.get("pasos").get(0)));
 		reporteNuevo.setPeso(Double.parseDouble(datosFormulario.get("peso").get(0)));
 

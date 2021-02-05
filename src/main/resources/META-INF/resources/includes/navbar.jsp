@@ -6,7 +6,6 @@
 			<li><a href="/medicdata/home">home</a></li>
 			<li><a href="/medicdata/listado-usuarios">listado de Usuarios</a></li>
 			<li><a href="/medicdata/listado-reportes">Listado de Reportes</a></li>
-			<li><a href="/medicdata/nuevo-reporte">Nuevo Reporte</a></li>
 		</ul>
 	</nav>
 </div>
