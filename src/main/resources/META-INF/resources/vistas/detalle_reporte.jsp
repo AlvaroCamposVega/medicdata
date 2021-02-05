@@ -8,6 +8,7 @@
 <title>Detalle del Reporte ${reporte.id}</title>
 </head>
 <body>		
+	<%@ include file="../includes/navbar.jsp"%>
 	<h2>Detalle del Reporte ${reporte.id}</h2>
 	<table>
 		<tr>
