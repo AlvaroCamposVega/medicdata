@@ -11,4 +11,6 @@ public interface ReporteServices {
 	public List<Reporte> getAll();
 	
 	public Reporte save(Reporte reporte);
+	
+	public List<Reporte> findByUsuarioDni(String dni);
 }

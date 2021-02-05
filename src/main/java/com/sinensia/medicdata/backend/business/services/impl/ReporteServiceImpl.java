@@ -74,4 +74,20 @@ public class ReporteServiceImpl implements ReporteServices {
 		return createdReporte;
 	}
 
+	@Override
+	public List<Reporte> findByUsuarioDni(String dni) {
+		
+		List<ReportePL> reportesPL = reportePLRepository.findByUsuarioDni(dni);
+		
+		List<Reporte> reportes = new ArrayList<>();
+		
+		for (ReportePL reportePL : reportesPL) {
+			// reportes.add(dozerBeanMapper.map(reportePL, Reporte.class));
+			
+			reportes.add(sala4Mapper.convertReportePLToReporte(reportePL));
+		}
+
+		return reportes;
+	}
+
 }

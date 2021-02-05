@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sinensia.medicdata.backend.business.model.Reporte;
 import com.sinensia.medicdata.backend.business.model.Usuario;
+import com.sinensia.medicdata.backend.business.services.ReporteServices;
 import com.sinensia.medicdata.backend.business.services.UsuarioServices;
 
 @RestController
@@ -22,6 +24,9 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioServices usuarioServices;
 	
+	@Autowired
+	private ReporteServices reporteServices;
+	
 	@GetMapping
 	public List<Usuario>getAll(){
 		return usuarioServices.getAll();
@@ -30,6 +35,11 @@ public class UsuarioController {
 	@GetMapping("/{dni}")
 	public Usuario getByCodigo(@PathVariable("dni") String dni) {
 		return usuarioServices.read(dni);
+	}
+	
+	@GetMapping("/{dni}/reportes")
+	public List<Reporte> getReportesByCodigoUsuario(@PathVariable("dni") String dni) {
+		return reporteServices.findByUsuarioDni(dni);
 	}
 	
 	@PostMapping
