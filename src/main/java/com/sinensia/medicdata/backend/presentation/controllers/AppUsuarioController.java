@@ -1,5 +1,8 @@
 package com.sinensia.medicdata.backend.presentation.controllers;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +15,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.sinensia.medicdata.backend.business.model.Geolocalizacion;
+import com.sinensia.medicdata.backend.business.model.PresionArterial;
 import com.sinensia.medicdata.backend.business.model.Reporte;
 import com.sinensia.medicdata.backend.business.model.Usuario;
+import com.sinensia.medicdata.backend.business.services.ReporteServices;
 import com.sinensia.medicdata.backend.business.services.UsuarioServices;
 
 @Controller
@@ -22,6 +28,9 @@ public class AppUsuarioController {
 
 	@Autowired
 	private UsuarioServices usuarioServices;
+
+	@Autowired
+	private ReporteServices reporteServices;
 
 	@RequestMapping("/listado-usuarios")
 	public String getAll(Model model) {
@@ -41,30 +50,51 @@ public class AppUsuarioController {
 
 		return "detalle_usuario";
 	}
-	
+
 	@RequestMapping("/nuevo-reporte/{dni}")
 	public String nuevoReporte(@PathVariable String dni, Model model) {
-		
+
 		model.addAttribute("dni", dni);
-		
+
 		return "nuevo_reporte";
 	}
-	
-	@RequestMapping(value="/nuevo-reporte",
-            method=RequestMethod.POST,
-            consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+
+	@RequestMapping(value = "/nuevo-reporte", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 	public Reporte crearReporte(@RequestBody MultiValueMap<String, String> datosFormulario) {
-		System.out.println(datosFormulario.get("dni"));
-		return null;
-//		Reporte reporteNuevo=new Reporte();
-//		Usuario usuario=new Usuario();
-//		usuario.setDni(datosFormulario.get("dni").toString());
-//		reporteNuevo.setUsuario(new Usuario);(datosFormulario.get("dni"));
-//
-//		
-//		usuarioServices.save(reporteNuevo);
-//		
-//		return reporteNuevo;
+
+		Reporte reporteNuevo = new Reporte();
+
+		Usuario usuario = new Usuario();
+		usuario.setDni(datosFormulario.get("dni").get(0));
+		reporteNuevo.setUsuario(usuario);
+
+		Geolocalizacion geolocalizacion = new Geolocalizacion();
+		geolocalizacion.setLatitud(Integer.parseInt(datosFormulario.get("latitud").get(0)));
+		geolocalizacion.setLongitud(Integer.parseInt(datosFormulario.get("longitud").get(0)));
+		reporteNuevo.setGeolocalizacion(geolocalizacion);
+
+		String fecha = datosFormulario.get("fechaReporte").get(0);
+		Date date = null;
+		try {
+			date = new SimpleDateFormat("yyyy/MM/dd").parse(fecha);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		reporteNuevo.setFechaReporte(date);
+
+		PresionArterial presionArterial = new PresionArterial();
+		presionArterial.setPresionMaxima(Integer.parseInt(datosFormulario.get("presionMaxima").get(0)));
+		presionArterial.setPresionMinima(Integer.parseInt(datosFormulario.get("presionMinima").get(0)));
+		reporteNuevo.setPresionArterial(presionArterial);
+
+		reporteNuevo.setId(Integer.parseInt(datosFormulario.get("id").get(0)));
+		reporteNuevo.setPasos(Integer.parseInt(datosFormulario.get("pasos").get(0)));
+		reporteNuevo.setPeso(Double.parseDouble(datosFormulario.get("peso").get(0)));
+
+		reporteServices.save(reporteNuevo);
+
+		return reporteNuevo;
 	}
 
 }
