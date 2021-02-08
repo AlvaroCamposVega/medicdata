@@ -35,10 +35,20 @@ public interface ReportePLRepository extends JpaRepository<ReportePL, Integer> {
 		 + "(r.usuario.dni = :dni))")
 	public List<Object> getCantidadLecturasPresionesAltas(String dni, int valor, Date fechaInicio, Date fechaFin);
 	
-	// TODO - CONSULTA 4
-	@Query("SELECT r.peso "
+	@Query("SELECT r.peso - (SELECT r.peso FROM ReportePL r WHERE (r.fechaReporte = :fecha2) AND (r.usuario.dni = :dni)) "
 		 + "FROM ReportePL r "
-		 + "WHERE (((r.fechaReporte BETWEEN :fechaInicio AND :fechaFin) AND "
-		 + "(r.usuario.dni = :dni))")
-	public List<Object> getDiferenciaPeso(String dni, Date fechaInicio, Date fechaFin);
+		 + "WHERE (r.fechaReporte = :fecha1) AND (r.usuario.dni = :dni)")
+	public List<Object> getDiferenciaPeso(String dni, Date fecha1, Date fecha2);
+	
+	@Query("SELECT AVG(r.presionArterial.presionMinima), AVG(r.presionArterial.presionMaxima) "
+		 + "FROM ReportePL r "
+		 + "GROUP BY r.usuario.sexo")
+	public List<Object[]> getEstadisticaPresionArterialSexo();
+	
+	// TODO - CONSULTA 7
+	@Query("SELECT AVG(r.presionArterial.presionMinima), AVG(r.presionArterial.presionMaxima) "
+		 + "FROM ReportePL r, UsuarioPL u"
+		 + "WHERE u.fechaNacimiento BETWEEN YEAR(2021-02-08) AND (YEAR(2021-02-08) - 100)"
+		 + "GROUP BY ")
+	public List<Object[]> getEstadisticaPresionArterialMediaEdad();
 }

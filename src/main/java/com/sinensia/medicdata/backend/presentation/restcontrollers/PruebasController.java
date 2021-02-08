@@ -55,7 +55,6 @@ public class PruebasController {
 			fechaInicio = sdf.parse("2019-01-01");
 			fechaFin = sdf.parse("2019-10-01");
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -65,17 +64,28 @@ public class PruebasController {
 	@GetMapping("/prueba5")
 	public List<Object> getDiferenciaPeso() {
 		
-		Date fechaInicio = null;
-		Date fechaFin = null;
+		Date fecha1 = null;
+		Date fecha2 = null;
 		
 		try {
-			fechaInicio = sdf.parse("2019-01-01");
-			fechaFin = sdf.parse("2019-10-01");
+			fecha1 = sdf.parse("2020-01-01");
+			fecha2 = sdf.parse("2021-02-02");
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		return reportePLRepository.getDiferenciaPeso("640494454-S", fechaInicio, fechaFin);
+		return reportePLRepository.getDiferenciaPeso("271949805-X", fecha1, fecha2);
+	}
+	
+	@GetMapping("/prueba6")
+	public List<Object[]> getEstadisticaPresionArterialSexo() {
+		
+		return reportePLRepository.getEstadisticaPresionArterialSexo();
+	}
+	
+	@GetMapping("/prueba7")
+	public List<Object[]> getEstadisticaPresionArterialMediaEdad() {
+		
+		return reportePLRepository.getEstadisticaPresionArterialMediaEdad();
 	}
 }
