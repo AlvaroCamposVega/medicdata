@@ -46,9 +46,9 @@ public interface ReportePLRepository extends JpaRepository<ReportePL, Integer> {
 	public List<Object[]> getEstadisticaPresionArterialSexo();
 	
 	// TODO - CONSULTA 7
-	@Query("SELECT AVG(r.presionArterial.presionMinima), AVG(r.presionArterial.presionMaxima) "
+	/*@Query("SELECT AVG(r.presionArterial.presionMinima), AVG(r.presionArterial.presionMaxima) "
 		 + "FROM ReportePL r, UsuarioPL u"
 		 + "WHERE u.fechaNacimiento BETWEEN YEAR(2021-02-08) AND (YEAR(2021-02-08) - 100)"
 		 + "GROUP BY ")
-	public List<Object[]> getEstadisticaPresionArterialMediaEdad();
+	public List<Object[]> getEstadisticaPresionArterialMediaEdad();*/
 }
